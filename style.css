@@ -4,7 +4,12 @@
 }
 
 * {
-  transition: 0.2s cubic-bezier(0.42, 0.08, 0.57, 0.87);
+  transition: 0.5s cubic-bezier(0.13, 0.38, 0.71, 1.26);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+html {
+  opacity: 0;
 }
 
 body {
@@ -104,4 +109,25 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  color: var(--color-primary);
+}
+
+main a {
+  text-transform: uppercase;
+  border-bottom: 5px double var(--color-primary);
+}
+main a:hover {
+  border: 2px solid var(--color-bg);
+  border-radius: 10px;
+  color: var(--color-bg);
+  background-color: var(--color-primary);
+  padding: 12px;
 }

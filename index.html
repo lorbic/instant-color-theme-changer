@@ -4,16 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" type="text/javascript"></script>
+    <link rel="preload" href="./js/index.js" as="script" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Color Theme</title>
   </head>
   <body>
     <header>
       <a href="/">Logo</a>
       <div class="right">
-        <input type="color" name="color" id="color" value="#15b9ff" />
-        <input type="color" name="colorbg" id="colorbg" value="#ffffff" />
+        <input
+          type="color"
+          name="color"
+          id="color"
+          value="#15b9ff"
+          onchange="changeColorScheme(this)"
+          onkeyup="changeColorScheme(this)"
+        />
+        <input
+          type="color"
+          name="colorbg"
+          id="colorbg"
+          value="#ffffff"
+          onchange="changeColorScheme(this)"
+          onkeyup="changeColorScheme(this)"
+        />
       </div>
     </header>
     <nav>
@@ -29,5 +43,25 @@
         </a>
       </ul>
     </nav>
+    <main>
+      <h2>Instant Website Color Scheme Changer</h2>
+      <h3>
+        Visit: <a href="https://github.com/lorbic/instant-color-theme-changer" target="_BLANK">GitHub</a> for the source
+        code.
+      </h3>
+
+      <p>Created with 💖 by <a href="https://vkash.lorbic.com" target="_BLANK">Vikash</a></p>
+    </main>
   </body>
+  <script src="./js/index.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    if (document.readyState !== "loading") loadColorScheme();
+    else {
+      document.addEventListener("DOMContentLoaded", (event) => {
+        loadColorScheme();
+        console.log("DOM fully loaded and parsed");
+      });
+    }
+  </script>
 </html>
