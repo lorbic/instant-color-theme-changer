@@ -52,12 +52,11 @@ function saveColorScheme(fgc, bgc) {
 
 window.addEventListener("DOMContentLoaded", (event) => {
   loadColorScheme();
-
   console.log("DOM fully loaded and parsed");
+
   const colorPicker = document.querySelector("#color");
-
   colorPicker.addEventListener("change", watchColorPicker, false);
-  const colorPickerBg = document.querySelector("#colorbg");
 
+  const colorPickerBg = document.querySelector("#colorbg");
   colorPickerBg.addEventListener("change", watchColorPickerBg, false);
 });
