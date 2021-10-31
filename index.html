@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preload" href="./js/index.js" as="script" />
     <link rel="stylesheet" href="./style.css" />
-    <script src="./js/index.js" type="text/javascript" defer></script>
     <title>Color Theme</title>
   </head>
   <body>
@@ -44,4 +44,15 @@
       </ul>
     </nav>
   </body>
+  <script src="./js/index.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    // window.addEventListener("onload", (event) => {
+    //   loadColorScheme();
+    // });
+    window.addEventListener("DOMContentLoaded", (event) => {
+      loadColorScheme();
+      console.log("DOM fully loaded and parsed");
+    });
+  </script>
 </html>

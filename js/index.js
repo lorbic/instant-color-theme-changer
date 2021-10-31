@@ -3,20 +3,6 @@ let root = document.documentElement;
 let bg = "#ffffff";
 let fg = "#15b9ff";
 
-// function watchColorPicker(event) {
-//   console.log(event.target.value);
-//   root.style.setProperty("--color-primary", event.target.value);
-//   fg = event.target.value;
-//   saveColorScheme(fg, bg);
-// }
-
-// function watchColorPickerBg(event) {
-//   console.log(event.target.value);
-//   root.style.setProperty("--color-bg", event.target.value);
-//   bg = event.target.value;
-//   saveColorScheme(fg, bg);
-// }
-
 function loadColorScheme() {
   const fgc = window.localStorage.getItem("colorSchemeForeground");
   const bgc = window.localStorage.getItem("colorSchemeBackground");
@@ -48,21 +34,13 @@ function saveColorScheme(fgc, bgc) {
 function changeColorScheme(target) {
   const colorPickerFg = document.querySelector("#color");
   const colorPickerBg = document.querySelector("#colorbg");
-  //   console.log(colorPickerFg.value);
-  //   console.log(colorPickerBg.value);
+
+  console.log(`Foreground: ${colorPickerFg.value}`);
+  console.log(`Background: ${colorPickerBg.value}`);
+
   root.style.setProperty("--color-primary", colorPickerFg.value);
   root.style.setProperty("--color-bg", colorPickerBg.value);
+
   saveColorScheme(colorPickerFg.value, colorPickerBg.value);
-  console.log("Colors Scheme Saved!");
+  console.log("Color Scheme Saved!");
 }
-
-window.addEventListener("DOMContentLoaded", (event) => {
-  loadColorScheme();
-  console.log("DOM fully loaded and parsed");
-
-  //   const colorPicker = document.querySelector("#color");
-  //   colorPicker.addEventListener("change", watchColorPicker, false);
-
-  //   const colorPickerBg = document.querySelector("#colorbg");
-  //   colorPickerBg.addEventListener("change", watchColorPickerBg, false);
-});
