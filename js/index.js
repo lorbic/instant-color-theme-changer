@@ -8,6 +8,9 @@ function loadColorScheme() {
   const bgc = window.localStorage.getItem("colorSchemeBackground");
   console.log(`FG: ${fgc}\nBG: ${bgc}`);
 
+  const html = document.querySelector("html");
+  html.style.setProperty("opacity", 1);
+
   const colorPicker = document.querySelector("#color");
   const colorPickerBg = document.querySelector("#colorbg");
 
