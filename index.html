@@ -50,9 +50,13 @@
     // window.addEventListener("onload", (event) => {
     //   loadColorScheme();
     // });
-    window.addEventListener("DOMContentLoaded", (event) => {
-      loadColorScheme();
-      console.log("DOM fully loaded and parsed");
-    });
+
+    if (document.readyState !== "loading") loadColorScheme();
+    else {
+      document.addEventListener("DOMContentLoaded", (event) => {
+        loadColorScheme();
+        console.log("DOM fully loaded and parsed");
+      });
+    }
   </script>
 </html>
